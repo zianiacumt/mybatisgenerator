@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://192.168.100.142/PUBLIC/DTD/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+
+    <!-- 数据库驱动 -->
+    <classPathEntry location="F:/apache-maven-3.5.3/springboot_repository/mysql/mysql-connector-java/5.1.37/mysql-connector-java-5.1.37.jar"/>
+
+    <context id="mybatis" targetRuntime="com.ziania.accountmanager.generator.MyIntrospectedTable">
+
+        <!-- 设置生产java文件的编码方式 -->
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <!-- java文件格式化
+        <property name="javaFormatter" value="org.mybatis.generator.api.dom.DefaultJavaFormatter"/> -->
+        <!-- xml文件格式化 -->
+        <property name="xmlFormatter" value="org.mybatis.generator.api.dom.DefaultXmlFormatter"/>
+
+        <!-- 数据库连接信息 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/my_sql" userId="root" password="admin"/>
+
+        <!-- java模型创建器 -->
+        <javaModelGenerator targetPackage="com.ziania.accountmanager" targetProject="src/main/java">
+            <property name="enableSubPackages" value="false"/>
+        </javaModelGenerator>
+
+        <!-- mapper xml文件生成器 -->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="false"/>
+        </sqlMapGenerator>
+
+        <!-- Mapper接口生产器 -->
+        <javaClientGenerator targetPackage="com.ziania.accountmanager.dao" targetProject="src/main/java"
+                             type="com.ziania.accountmanager.generator.javaclient.MyJavaClientGenerator">
+            <property name="enableSubPackages" value="false"/>
+        </javaClientGenerator>
+
+        <!-- 目标表 -->
+        <table tableName="t_accountmanger_user"></table>
+
+    </context>
+
+</generatorConfiguration>
