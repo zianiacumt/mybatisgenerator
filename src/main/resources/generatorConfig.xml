@@ -6,7 +6,7 @@
     <!-- 数据库驱动 -->
     <classPathEntry location="F:/apache-maven-3.5.3/springboot_repository/mysql/mysql-connector-java/5.1.37/mysql-connector-java-5.1.37.jar"/>
 
-    <context id="mybatis" targetRuntime="com.ziania.accountmanager.generator.MyIntrospectedTable">
+    <context id="mybatis" targetRuntime="com.ziania.mybatisgenerator.MyIntrospectedTable">
 
         <!-- 设置生产java文件的编码方式 -->
         <property name="javaFileEncoding" value="UTF-8"/>
@@ -31,12 +31,12 @@
 
         <!-- Mapper接口生产器 -->
         <javaClientGenerator targetPackage="com.ziania.accountmanager.dao" targetProject="src/main/java"
-                             type="com.ziania.accountmanager.generator.javaclient.MyJavaClientGenerator">
+                             type="com.ziania.mybatisgenerator.javaclient.MyJavaClientGenerator">
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
 
         <!-- 目标表 -->
-        <table tableName="t_accountmanger_user"></table>
+        <table tableName="t_accountmanger_user"/>
 
     </context>
 
